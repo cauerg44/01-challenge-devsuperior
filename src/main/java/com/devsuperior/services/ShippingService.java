@@ -8,6 +8,13 @@ import com.devsuperior.ents.Order;
 public class ShippingService {
 
 	public double shipment(Order order) {
-		
-	}
+		double basicPrice = order.getBasic();
+		if(basicPrice < 100.0) {
+			return basicPrice + 20.00;
+		} else if (basicPrice >= 100.0 && basicPrice < 200.0) {
+			return basicPrice + 12.00;
+		} else {
+			return basicPrice;
+		}
+    }
 }
